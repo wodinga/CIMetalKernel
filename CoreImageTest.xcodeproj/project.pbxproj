@@ -11,6 +11,8 @@
 		10AF1D292253C9BB0008954C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AF1D282253C9BB0008954C /* ViewController.swift */; };
 		10AF1D2B2253C9BD0008954C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10AF1D2A2253C9BD0008954C /* Assets.xcassets */; };
 		10AF1D2E2253C9BD0008954C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10AF1D2C2253C9BD0008954C /* Main.storyboard */; };
+		10AF1D372253C9C30008954C /* FilterKernel.metal in Sources */ = {isa = PBXBuildFile; fileRef = 10AF1D362253C9C30008954C /* FilterKernel.metal */; };
+		10AF1D392253D2910008954C /* vinyltocat.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AF1D382253D2910008954C /* vinyltocat.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		10AF1D2D2253C9BD0008954C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10AF1D2F2253C9BD0008954C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10AF1D302253C9BD0008954C /* CoreImageTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoreImageTest.entitlements; sourceTree = "<group>"; };
+		10AF1D362253C9C30008954C /* FilterKernel.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FilterKernel.metal; sourceTree = "<group>"; };
+		10AF1D382253D2910008954C /* vinyltocat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vinyltocat.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +57,11 @@
 		10AF1D252253C9BB0008954C /* CoreImageTest */ = {
 			isa = PBXGroup;
 			children = (
+				10AF1D362253C9C30008954C /* FilterKernel.metal */,
 				10AF1D262253C9BB0008954C /* AppDelegate.swift */,
 				10AF1D282253C9BB0008954C /* ViewController.swift */,
 				10AF1D2A2253C9BD0008954C /* Assets.xcassets */,
+				10AF1D382253D2910008954C /* vinyltocat.png */,
 				10AF1D2C2253C9BD0008954C /* Main.storyboard */,
 				10AF1D2F2253C9BD0008954C /* Info.plist */,
 				10AF1D302253C9BD0008954C /* CoreImageTest.entitlements */,
@@ -123,6 +129,7 @@
 			files = (
 				10AF1D2B2253C9BD0008954C /* Assets.xcassets in Resources */,
 				10AF1D2E2253C9BD0008954C /* Main.storyboard in Resources */,
+				10AF1D392253D2910008954C /* vinyltocat.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +142,7 @@
 			files = (
 				10AF1D292253C9BB0008954C /* ViewController.swift in Sources */,
 				10AF1D272253C9BB0008954C /* AppDelegate.swift in Sources */,
+				10AF1D372253C9C30008954C /* FilterKernel.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +288,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MTLLINKER_FLAGS = "-cikernel";
+				MTL_COMPILER_FLAGS = "-fcikernel";
 				PRODUCT_BUNDLE_IDENTIFIER = wodinga.CoreImageTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -299,6 +309,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MTLLINKER_FLAGS = "-cikernel";
+				MTL_COMPILER_FLAGS = "-fcikernel";
 				PRODUCT_BUNDLE_IDENTIFIER = wodinga.CoreImageTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
