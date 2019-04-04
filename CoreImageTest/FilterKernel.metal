@@ -12,19 +12,17 @@
 extern "C" {
     namespace coreimage {
         float4 test(sampler src) {
-            float4 pixValue; // 2
-//            CoreImage ci = CoreImage();
+            float4 pixValue;
+            // Get current value
             pixValue = src.sample(src.coord());
-//            int num = 0;
-            unpremultiply(pixValue); // 4
+            //Unmultiply alpha from RGB
+            unpremultiply(pixValue);
+
+            // Mess around with the color values to create a gradient
             pixValue.r = src.coord().x / src.extent().w;
             pixValue.g = src.coord().y / src.extent().z;
-            
-//            pixValue.r = 1.0 - pixValue.r; // 5
-//            pixValue.g = 1.0 - pixValue.g;
-//            pixValue.b = 1.0 - pixValue.b;
+
             return premultiply(pixValue);
-//            return src
         }
     }
 }
